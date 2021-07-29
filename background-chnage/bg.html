@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .cont {
+      display: flex;
+      height: 50vw;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      /* margin: auto ; */
+    }
+    .btn {
+      height: 50px;
+      width: 50%;
+      color: black;
+      background-color: white;
+      cursor: pointer;
+      border: 4px solid rgb(0, 0, 0);
+      box-shadow: inset 3px 3px 20px 0px rgb(0, 0, 0);
+    }
+    .btn:hover {
+      background-color: rgb(0, 0, 0);
+      color: white;
+      box-shadow: inset 3px 3px 20px 0px white;
+    }
+  </style>
+  <body>
+    <div class="cont">
+      <button id="btn" class="btn" onclick="chngebg()">CHANGE BACKGOUND</button>
+    </div>
+    <script>
+      function getrval(min, max) {
+        let val = Math.floor(Math.random() * (max - min)) + min;
+        return val;
+      }
+      function chngebg() {
+        let y = getrval(0, 255);
+
+        let x = getrval(0, 255);
+
+        let z = getrval(0, 255);
+        document.body.style.background = `rgb(${x},${y},${z})`;
+      }
+    </script>
+  </body>
+</html>
