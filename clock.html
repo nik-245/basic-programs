@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <!-- <link rel="./clock.css"> -->
+    <!-- <script src="clock-20210706T112804Z-001\clock\clock.js"></script> -->
+    <style>
+        .clockconte{
+    /* background-color:red; */
+    display: flex;
+    position: relative;
+    margin: auto;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 50vw;
+    width: 50vw;
+    background-image: url('D:\vs code\clock-20210706T112804Z-001\clock\download.png') ;
+    /* background-image: url('clock\clock-removebg-preview.png') ; */
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: 30vw;           /* to make responsive backgroud img  */
+    background-position:center;
+    /* background-origin:; */
+    /* background-size: 100%; */
+}
+
+#hour,#minit,#sec,#centerdot{
+     position: absolute;
+     border-radius: 20px;
+    transform-origin: bottom;    
+    }
+
+#centerdot{
+    width: 2vw;
+    height: 2vw;
+    top:47.8% ;
+    background-color: rgb(0, 0, 0);
+    left:47.89% ;
+
+    /* display: none; */
+} 
+
+#hour{
+    width:2vw;
+    height: 17%;
+    top: 33%;
+    left: 47.5%;
+    border: 1px solid rgb(238, 241, 16);
+    /* display: none; */
+    background-color: rgba(238, 241, 16, 0.479);
+} 
+
+#minit{
+    width:0.7%;
+    height: 21%;
+    top: 29.4%;
+    left: 49.56%;
+    border: 1px solid rgba(255, 94, 0, 0.767);
+    background-color: rgb(255, 94, 0,0.479);
+}  
+
+#sec{
+    width:0.3%;
+    height: 25%;
+    top: 25.4%;
+    left:49.56% ;
+    /* display: none; */
+    background-color: rgb(0, 29, 31);
+
+}
+    </style>
+</head>
+<body>
+    <div class="clockconte">
+        <div id="hour"></div>
+        <div id="minit"> </div>
+        <div id="sec"></div>
+          <div id="centerdot"></div>
+        </div>
+    </body>
+    <script>
+        setInterval(() => {
+    d = new Date();
+    htime = d.getHours();
+    mtime = d.getMinutes();
+    stime = d.getSeconds();
+    hrotation = 30*htime + mtime/2;
+    mrotation = 6*mtime;
+    srotation = 6*stime;
+
+    hour.style.transform = `rotate(${hrotation}deg)`;
+    minit.style.transform = `rotate(${mrotation}deg)`;
+    sec.style.transform = `rotate(${srotation}deg)`;
+}, 1000);
+    </script>
+</html>
+
+
+
+
+<!-- for h hour -->
+<!--  30H + m\2 deggre rotation -->
+<!-- hear H is hour and m is minit and this deggre set hourhand into right position  -->
+
+<!-- for m minit -->
+<!-- 6m degge rotation -->
+<!-- hear m is a minit and this deggre set minit hand into right postion -->
+
+<!-- for s minit  -->
+<!-- 6s deggre rotation -->
+<!-- hear for seconhand into right postion -->
