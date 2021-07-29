@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple counter using javascript</title>
+    <style>
+        .main{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin:14vw auto;
+        }
+        #less , #add {
+              height: 100px; 
+              width: 100px;
+              font-size: 50px;
+              cursor: pointer;
+              padding: 15px;
+              margin: 50px;
+              color: black;
+        }
+        
+        .counter{
+            display: inline-block;
+            border: 3px solid red;
+            background-color: brown;
+            height: 300px;
+            width: 30%;
+        }
+        
+        #innerfont{
+            /* align-items: center; */
+            text-align: center;
+            font-size: 7vw;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <button id="less" onclick="oneless()">-</button>
+        <div id="count" class="counter">
+           <h1 id="innerfont"></h1>    
+        </div>
+        <button id="add" onclick="oneadd()">+</button>
+    
+    </div>
+    <script>
+        let change = document.getElementById("innerfont");
+        let x = 0 ;
+        change.innerHTML = 0 ;
+        function oneless(){
+             change.innerHTML= --x ;
+        }
+
+        // let add = document.getElementById("add");
+        // let y = 0 ;
+        function oneadd() 
+        {
+            change.innerHTML = ++x;
+        }
+
+
+    </script>
+</body>
+</html>
